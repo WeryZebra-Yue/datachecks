@@ -35,11 +35,11 @@ pyparsing = "^3.1.1"
 sqlalchemy = "1.4.49"
 sqlalchemy-bigquery = { version="^1.8.0", optional=true }
 opensearch-py = { version="^2.2.0", optional=true }
-psycopg2 = { version="^2.9.6", optional=true }
 databricks-sql-connector = { version="^2.9.3", optional=true }
 elasticsearch = { version="^7.17.3", optional=true }
 pymysql = { version="^1.1.0", optional=true, extras=["rsa"] }
 sqlalchemy-redshift = { version="^0.8.14", optional=true }
+psycopg2-binary = {version = "^2.9.9", optional = true}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -60,14 +60,14 @@ mkdocs-material = "^8.5.6"
 
 [tool.poetry.extras]
 # When adding, update also: README + dev deps just above
-postgres = ["psycopg2"]
+postgres = ["psycopg2-binary"]
 mysql = ["pymysql"]
 opensearch = ["opensearch-py"]
 bigquery = ["sqlalchemy-bigquery"]
 databricks = ["databricks-sql-connector"]
 elasticsearch = ["elasticsearch"]
 redshift = ["sqlalchemy-redshift"]
-all = ["psycopg2", "pymysql", "opensearch-py", "sqlalchemy-bigquery", "databricks-sql-connector", "elasticsearch", "sqlalchemy-redshift"]
+all = ["psycopg2-binary", "pymysql", "opensearch-py", "sqlalchemy-bigquery", "databricks-sql-connector", "elasticsearch", "sqlalchemy-redshift"]
 
 [tool.poetry.scripts]
 datachecks = "datachecks.cli.cli:main"
